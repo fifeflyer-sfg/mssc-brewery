@@ -38,12 +38,12 @@ public class CustomerController {
     }
 
     @PutMapping({"/{id}"})
-    public CustomerDTO updateCustomer(@PathVariable UUID id, @RequestBody CustomerDTO customer) {
-        return customerService.updateCustomer(id, customer);
+    public void updateCustomer(@PathVariable UUID id, @RequestBody CustomerDTO customer) {
+        customerService.updateCustomer(id, customer);
     }
 
     @DeleteMapping({"/{id}"})
-    public CustomerDTO deleteCustomer(@PathVariable UUID id, @RequestBody CustomerDTO customer) {
-        return customerService.deleteCustomerById(id, customer);
+    public void deleteCustomer(@PathVariable UUID id) {
+        customerService.deleteCustomerById(id);
     }
 }

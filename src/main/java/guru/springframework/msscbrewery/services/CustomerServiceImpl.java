@@ -25,14 +25,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDTO updateCustomer(UUID id, CustomerDTO customer) {
+    public void updateCustomer(UUID id, CustomerDTO customer) {
         log.debug("Updated customer [{}]", id);
-        return customer;
     }
 
     @Override
-    public CustomerDTO deleteCustomerById(UUID id, CustomerDTO customer) {
+    public void deleteCustomerById(UUID id) {
         log.debug("Deleted customer [{}]", id);
-        return customer;
     }
 }

@@ -64,23 +64,21 @@ public class CustomerIntegrationTest {
     @Test
     public void updateCustomer() throws Exception {
         CustomerDTO customer = buildCustomer();
-        when(customerService.updateCustomer(CUSTOMER_ID, customer)).thenReturn(customer);
 
-        verifyResponse(mockMvc.perform(put("/api/v1/customer/" + CUSTOMER_ID.toString())
+        mockMvc.perform(put("/api/v1/customer/" + CUSTOMER_ID.toString())
             .accept(APPLICATION_JSON)
             .contentType(APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(customer))));
+            .content(objectMapper.writeValueAsString(customer)));
     }
 
     @Test
     public void deleteCustomer() throws Exception {
         CustomerDTO customer = buildCustomer();
-        when(customerService.updateCustomer(CUSTOMER_ID, customer)).thenReturn(customer);
 
-        verifyResponse(mockMvc.perform(put("/api/v1/customer/" + CUSTOMER_ID.toString())
+        mockMvc.perform(put("/api/v1/customer/" + CUSTOMER_ID.toString())
             .accept(APPLICATION_JSON)
             .contentType(APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(customer))));
+            .content(objectMapper.writeValueAsString(customer)));
     }
 
     private CustomerDTO buildCustomer() {
